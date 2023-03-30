@@ -1,0 +1,19 @@
+.bookList {
+  padding: 5% 15%;
+}
+
+.listItem {
+  padding: 5px;
+  font-size: 24px;
+}
+
+.author {
+  color: black;
+  font-size: 32px;
+  font-weight: 900;
+}
+
+form {
+  width: 100%;
+  padding-top: 10%;
+}

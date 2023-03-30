@@ -10,7 +10,7 @@ export default function NavBar() {
           <h1>Bookstore CMS</h1>
           <div>
             <NavLink to="/">Books</NavLink>
-            <NavLink to="#">Category</NavLink>
+            <NavLink to="category">Category</NavLink>
           </div>
         </nav>
       </header>
