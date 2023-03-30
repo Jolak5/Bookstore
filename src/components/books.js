@@ -13,17 +13,10 @@ export default function Books() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const list = 'hkhkhh';
-    const inputDiv = document.querySelector('.bookList');
-    inputDiv.innerHTML = list;
-  };
-
   return (
     <div>
 
-      <form onSubmit={handleSubmit}>
+      <form>
         <input
           type="text"
           name="fname"
