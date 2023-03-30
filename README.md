@@ -14,7 +14,6 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -67,14 +66,6 @@
 - This is a react app to check the progress of book reading.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- [Live Demo Link](https://Jolak5.github.io/Bookstore-react)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -134,7 +125,8 @@ Example commands:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Load the UI Dynamically from data gotten through Api GET
+- Load the UI Dynamically from data gotten through Api
+- Use redux to implement actions
 - clean and interactive
 
 
