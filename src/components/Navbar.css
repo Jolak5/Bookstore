@@ -1,0 +1,24 @@
+nav {
+  display: flex;
+  color: red;
+  align-items: center;
+  padding: 0 10%;
+  width: 100%;
+  justify-content: space-between;
+}
+
+nav h1 {
+  font-size: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  padding-left: 10%;
+  font-size: 24px;
+  color: #000;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: aqua;
+}
