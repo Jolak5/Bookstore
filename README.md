@@ -125,7 +125,8 @@ Example commands:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Load the UI Dynamically from data gotten through Api GET
+- Load the UI Dynamically from data gotten through Api
+- Use redux to implement actions
 - clean and interactive
 
 
