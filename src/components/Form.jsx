@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import AddBookButton from './AddBookButton';
 
-export default function Form() {
+
+export default function Form(divBlock) {
   const [state, setState] = useState({
     fname: '',
     lname: '',
@@ -13,10 +15,15 @@ export default function Form() {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+  };
+
   return (
     <div>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="fname"
@@ -32,7 +39,7 @@ export default function Form() {
           <option>Mystery</option>
           <option>Fan Fiction</option>
         </select>
-        <button type="button" className="button">Add Book</button>
+        <AddBookButton />
       </form>
     </div>
 

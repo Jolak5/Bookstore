@@ -1,16 +1,15 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import './App.css';
 import {
   createBrowserRouter, Route, createRoutesFromElements, RouterProvider,
 } from 'react-router-dom';
 import NavBar from './components/navBar';
-import Books from './pages/books';
+import Home from './pages/Home.jsx';
 import Category from './pages/category';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<NavBar />}>
-      <Route index element={<Books />} />
+      <Route index element={<Home />} />
       <Route path="Category" index element={<Category />} />
     </Route>,
   ),
