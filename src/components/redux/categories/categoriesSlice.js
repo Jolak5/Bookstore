@@ -1,23 +1,21 @@
+/* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
-export const counterSlice = createSlice({
-  name: 'counter',
-  initialState: {
-    value: [],
-  },
+const initialState = {
+  array: ['kayode', 'aremu'],
+  currentStatus: '',
+};
+
+export const statusSlice = createSlice({
+  name: 'status',
+  initialState,
   reducers: {
-    increment: (state) => {
-      state.value.push('1');
-    },
-    decrement: (state) => {
-      state.value.pop();
-    },
-    incrementByAmount: (state, action) => {
-      state.books.filter((book) => book.id !== action.payload.id);
+    statusProperty: (state) => {
+      state.currentStatus = 'Under construction';
     },
   },
 });
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+export const { statusProperty } = statusSlice.actions;
 
-export default counterSlice.reducer;
+export default statusSlice.reducer;

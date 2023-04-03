@@ -1,6 +1,6 @@
-import { useSelector } from "react-redux";
-import Form from "../components/Form";
-import "./home.css";
+import { useSelector } from 'react-redux';
+import Form from '../components/Form';
+import './home.css';
 
 // Import the initialState and display
 export default function Home() {
@@ -8,12 +8,12 @@ export default function Home() {
 
   return (
     <div className="bookList">
-      { (books ?? []).filter(b=>b.id).map((book) => (
+      { (books ?? []).filter((b) => b.id).map((book) => (
         <li key={book.id}>
           {book.title}
-          {" "}
+          {' '}
           {book.author}
-          {" "}
+          {' '}
         </li>
       ))}
       <Form />
