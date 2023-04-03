@@ -1,18 +1,17 @@
-/* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  array: ['kayode', 'aremu'],
-  currentStatus: '',
+  currentStatus: false,
 };
 
 export const statusSlice = createSlice({
-  name: 'status',
+  name: 'checkStatus',
   initialState,
   reducers: {
-    statusProperty: (state) => {
-      state.currentStatus = 'Under construction';
-    },
+    statusProperty: (state) => ({
+      ...state.currentStatus,
+      currentStatus: true,
+    }),
   },
 });
 

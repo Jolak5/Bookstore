@@ -5,6 +5,6 @@ import statusReducer from './categories/categoriesSlice';
 export default configureStore({
   reducer: {
     book: bookReducer,
-    status: statusReducer,
+    checkStatus: statusReducer,
   },
 });
