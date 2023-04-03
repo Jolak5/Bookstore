@@ -2,11 +2,9 @@ import './App.css';
 import {
   createBrowserRouter, Route, createRoutesFromElements, RouterProvider,
 } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import NavBar from './components/navBar';
 import Home from './pages/Home';
 import Category from './pages/category';
-import { statusProperty } from './components/redux/categories/categoriesSlice';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,8 +16,6 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  const dispatch = useDispatch();
-  dispatch(statusProperty());
   return (
     <RouterProvider router={router} />
   );
