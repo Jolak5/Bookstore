@@ -5,19 +5,19 @@ export const bookSlice = createSlice({
   initialState: {
     books: [
       {
-        item_id: 'item1',
+        id: 'item1',
         title: 'The Great Gatsby',
         author: 'John Smith',
         category: 'Fiction',
       },
       {
-        item_id: 'item2',
+        id: 'item2',
         title: 'Anna Karenina',
         author: 'Leo Tolstoy',
         category: 'Fiction',
       },
       {
-        item_id: 'item3',
+        id: 'item3',
         title: 'The Selfish Gene',
         author: 'Richard Dawkins',
         category: 'Nonfiction',
@@ -37,7 +37,7 @@ export const bookSlice = createSlice({
 });
 
 export const {
-  addBooks, remove, displayBooks, deleteBook,
+  addBooks, deleteBook,
 } = bookSlice.actions;
 
 export default bookSlice.reducer;

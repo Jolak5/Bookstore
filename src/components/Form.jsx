@@ -1,24 +1,48 @@
 import { useState } from 'react';
 import AddBookButton from './AddBookButton';
-
+function getRandId(){
+  return String(Math.round(Math.random() * 10**16))
+}
+const INITIAL_FORM_STATE= {
+  author:"",
+  title:"",
+  id:""
+} 
 
 export default function Form(divBlock) {
-  const [state, setState] = useState({
-    fname: '',
-    lname: '',
-  });
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+   }
+
+
+
+  const [formState, setFormState] = useState({...INITIAL_FORM_STATE, id: getRandId()})
+  
 
   const handleChange = (e) => {
-    setState({
-      ...state,
+    setFormState({
+      ...formState,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+//   const handleSubmit = ()=>{
+//     // ? validate the book form state, prevent submitting invalid data
+// const isValid = true 
+// if(!isValid){
+//   // ? set form error state
+//   return
+// }
+//  dispatchEvent(addBook(formState))
 
-  };
+//   }
+// function handleClear(){
+//   setFormState({author:"",
+//   title:"",
+//   id:""})
+// }
 
   return (
     <div>
@@ -26,20 +50,24 @@ export default function Form(divBlock) {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          name="fname"
-          placeholder="Book title..."
-          value={state.fname}
+          name="author"
+          placeholder="Author..."
+          value={formState.author}
           onChange={handleChange}
         />
-        <select className="category">
-          <option>Category</option>
-          <option>Fiction</option>
-          <option>Science Fiction</option>
-          <option>Fantasy</option>
-          <option>Mystery</option>
-          <option>Fan Fiction</option>
-        </select>
-        <AddBookButton />
+        <input
+          type="text"
+          name="title"
+          placeholder="Book title..."
+          value={formState.title}
+          onChange={handleChange}
+        />
+       
+        {/* TODO fix hack */}
+        
+       
+        <AddBookButton book={formState} />
+      
       </form>
     </div>
 
