@@ -1,9 +1,29 @@
+/* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
 export const bookSlice = createSlice({
   name: 'addbook',
   initialState: {
-    books: [],
+    books: [
+      {
+        id: 'item1',
+        title: 'The Great Gatsby',
+        author: 'John Smith',
+        category: 'Fiction',
+      },
+      {
+        id: 'item2',
+        title: 'Anna Karenina',
+        author: 'Leo Tolstoy',
+        category: 'Fiction',
+      },
+      {
+        id: 'item3',
+        title: 'The Selfish Gene',
+        author: 'Richard Dawkins',
+        category: 'Nonfiction',
+      },
+    ],
   },
   reducers: {
     addBooks: (state, action) => ({
@@ -12,8 +32,10 @@ export const bookSlice = createSlice({
     }),
 
     deleteBook: (state, action) => {
-      state.books.filter((book) => book.id !== action.payload.id);
+      const bookId = action.payload;
+      state.books = state.books.filter((book) => book.id !== bookId);
     },
+
   },
 });
 
