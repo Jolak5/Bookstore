@@ -5,19 +5,19 @@ import { deleteBook } from "../components/redux/books/booksSlice";
 
 
 // Import the initialState and display
-export default function Home(id) {
+export default function Home() {
   const dispatch = useDispatch()
-  const {books} = useSelector((state) => state.book);
+  const books = useSelector((state) => state.book.books);
 
   return (
     <div className="bookList">
       { (books ?? []).filter(b=>b.id).map((book) => (
-        <li key={book.id} {...book}>
-          {book.title}
-          {" "}
+        <li key={book.id} id= {book.id}>
           {book.author}
           {" "}
-          <button type='button' onClick={() => dispatch(deleteBook({id}))}>Delete</button>
+          {book.title}
+          {" "}
+          <button type='button' onClick={() => dispatch(deleteBook(book.id))}>Delete</button>
         </li>
         
       ))}

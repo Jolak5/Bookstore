@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import AddBookButton from './AddBookButton';
-function getRandId(){
-  return String(Math.round(Math.random() * 10**16))
-}
+import { v4 as uuid } from "uuid";
+
 const INITIAL_FORM_STATE= {
   author:"",
   title:"",
@@ -10,42 +9,24 @@ const INITIAL_FORM_STATE= {
 } 
 
 export default function Form() {
-
-  const [formState, setFormState] = useState({...INITIAL_FORM_STATE, id: getRandId()})
+  const [formState, setFormState] = useState({...INITIAL_FORM_STATE})
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTimeout(() => {
-      setFormState({
-        author:"",
-        title:"",
-        id:""
-      });
-    }, 2000);
+    
+    setFormState({
+      ...formState,
+     id:uuid(),
+    });
   };
 
-  const handleChange = (e) => {
+ const handleChange = (e) => {
     setFormState({
       ...formState,
       [e.target.name]: e.target.value,
     });
   };
 
-//   const handleSubmit = ()=>{
-//     // ? validate the book form state, prevent submitting invalid data
-// const isValid = true 
-// if(!isValid){
-//   // ? set form error state
-//   return
-// }
-//  dispatchEvent(addBook(formState))
-
-//   }
-function handleClear(){
-  setFormState({author:"",
-  title:"",
-  id:""})
-}
 
   return (
     <div>

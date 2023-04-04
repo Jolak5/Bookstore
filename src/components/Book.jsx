@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default function Book({ title, author }) {
 
   return (
-    <div>
+    <div >
       <ul>
         <li className="listItem">
           {title}
