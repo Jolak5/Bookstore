@@ -9,7 +9,7 @@ const INITIAL_FORM_STATE= {
   id:""
 } 
 
-export default function Form(divBlock) {
+export default function Form() {
 
   const [formState, setFormState] = useState({...INITIAL_FORM_STATE, id: getRandId()})
   
@@ -71,7 +71,7 @@ function handleClear(){
         {/* TODO fix hack */}
         
        
-        <AddBookButton book={formState} key={getRandId()}/>
+        <AddBookButton book={formState} />
       
       </form>
     </div>

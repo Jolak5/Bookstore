@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 
+
 export default function Book({ title, author }) {
+
   return (
     <div>
       <ul>
@@ -15,6 +17,7 @@ export default function Book({ title, author }) {
           </span>
         </li>
       </ul>
+      
     </div>
   );
 }
