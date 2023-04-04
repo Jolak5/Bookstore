@@ -17,7 +17,7 @@ export default function Home() {
           {" "}
           {book.title}
           {" "}
-          <button type='button' onClick={() => dispatch(deleteBook(book.id))}>Delete</button>
+          <button type='button' onClick={() => dispatch(deleteBook(book.id))}>Deletes</button>
         </li>
         
       ))}
