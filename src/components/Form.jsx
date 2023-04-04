@@ -11,15 +11,18 @@ const INITIAL_FORM_STATE= {
 
 export default function Form(divBlock) {
 
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-   }
-
-
-
   const [formState, setFormState] = useState({...INITIAL_FORM_STATE, id: getRandId()})
   
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setTimeout(() => {
+      setFormState({
+        author:"",
+        title:"",
+        id:""
+      });
+    }, 2000);
+  };
 
   const handleChange = (e) => {
     setFormState({
@@ -38,11 +41,11 @@ export default function Form(divBlock) {
 //  dispatchEvent(addBook(formState))
 
 //   }
-// function handleClear(){
-//   setFormState({author:"",
-//   title:"",
-//   id:""})
-// }
+function handleClear(){
+  setFormState({author:"",
+  title:"",
+  id:""})
+}
 
   return (
     <div>
@@ -54,6 +57,7 @@ export default function Form(divBlock) {
           placeholder="Author..."
           value={formState.author}
           onChange={handleChange}
+          required
         />
         <input
           type="text"
@@ -61,12 +65,13 @@ export default function Form(divBlock) {
           placeholder="Book title..."
           value={formState.title}
           onChange={handleChange}
+          required
         />
        
         {/* TODO fix hack */}
         
        
-        <AddBookButton book={formState} />
+        <AddBookButton book={formState} key={getRandId()}/>
       
       </form>
     </div>

@@ -10,7 +10,7 @@ export const statusSlice = createSlice({
   reducers: {
     statusProperty: (state) => ({
       ...state.currentStatus,
-      currentStatus: true,
+      currentStatus: !state.currentStatus,
     }),
   },
 });
