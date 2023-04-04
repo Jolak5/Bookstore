@@ -9,7 +9,7 @@ const INITIAL_FORM_STATE= {
 } 
 
 export default function Form() {
-  const [formState, setFormState] = useState({...INITIAL_FORM_STATE})
+  const [formState, setFormState] = useState({...INITIAL_FORM_STATE, id: 2})
   
   const handleSubmit = (e) => {
     e.preventDefault();

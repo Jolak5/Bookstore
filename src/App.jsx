@@ -3,8 +3,8 @@ import {
   createBrowserRouter, Route, createRoutesFromElements, RouterProvider,
 } from 'react-router-dom';
 import NavBar from './components/navBar';
-import Home from './pages/Home.jsx';
 import Category from './pages/category';
+import Home from './pages/Home';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
