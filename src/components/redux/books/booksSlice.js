@@ -9,7 +9,7 @@ export const bookSlice = createSlice({
         id: 'item1',
         title: 'The Great Gatsby',
         author: 'John Smith',
-        category: 'Fiction',
+        category: 'Fictions',
       },
       {
         id: 'item2',
