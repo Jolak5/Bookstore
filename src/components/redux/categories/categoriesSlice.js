@@ -17,4 +17,6 @@ export const statusSlice = createSlice({
 
 export const { statusProperty } = statusSlice.actions;
 
+
 export default statusSlice.reducer;
+

@@ -5,3 +5,4 @@ export default function StatusLoading() {
     <div>Under construction</div>
   );
 }
+
