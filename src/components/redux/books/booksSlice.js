@@ -1,30 +1,33 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-param-reassign */
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 import { v4 as uuid } from 'uuid';
+
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/HZntFTFERWdyWphmEi2T/books';
+
+export const getBookDetails = createAsyncThunk('book/getBookDetails', async () => {
+  try {
+    const resp = await axios(url);
+    return resp.data;
+  } catch (error) {
+    return (error.response.data);
+  }
+});
+
+export const postBookDetails = createAsyncThunk('book/getBookDetails', async (books) => {
+  try {
+    const resp = await axios.post(url, books);
+    return resp.data;
+  } catch (error) {
+    return error;
+  }
+});
 
 export const bookSlice = createSlice({
   name: 'addbook',
   initialState: {
-    books: [
-      {
-        id: 'item1',
-        title: 'The Great Gatsby',
-        author: 'John Smith',
-        category: 'Fiction',
-      },
-      {
-        id: 'item2',
-        title: 'Anna Karenina',
-        author: 'Leo Tolstoy',
-        category: 'Fiction',
-      },
-      {
-        id: 'item3',
-        title: 'The Selfish Gene',
-        author: 'Richard Dawkins',
-        category: 'Nonfiction',
-      },
-    ],
+    books: [],
   },
   reducers: {
     addBooks: (state, action) => ({
@@ -37,6 +40,31 @@ export const bookSlice = createSlice({
       state.books = state.books.filter((book) => book.id !== bookId);
     },
 
+  },
+  extraReducers: {
+    [getBookDetails.pending]: (state) => ({
+      ...state,
+      isLoading: true,
+    }),
+    [getBookDetails.fulfilled]: (state, action) => ({
+      ...state,
+      books: action.payload,
+    }),
+    [getBookDetails.rejected]: (state) => ({
+      ...state,
+      isLoading: false,
+    }),
+    [postBookDetails.pending]: (state) => ({
+      ...state,
+      isLoading: false,
+    }),
+    [postBookDetails.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.books.push(action.payload);
+    },
+    [postBookDetails.rejected]: (state) => {
+      state.isLoading = false;
+    },
   },
 });
 
