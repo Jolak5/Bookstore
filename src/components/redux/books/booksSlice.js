@@ -72,35 +72,6 @@ export const bookSlice = createSlice({
       state.books = [];
     },
   },
-  // extraReducers: (builder) => {
-  //   builder.addCase(getBookDetails.pending, (state) => {
-  //     state.isLoading = true;
-  //   });
-
-  //   builder.addCase(getBookDetails.fulfilled, (state, action) => {
-  //     state.books = action.payload;
-  //     state.isLoading = true;
-  //   });
-
-  //   builder.addCase(getBookDetails.rejected, (state) => {
-  //     state.books = [];
-  //     state.isLoading = false;
-  //   });
-  //   // post books details reducers
-  //   builder.addCase(postBookDetails.pending, (state) => {
-  //     state.isLoading = true;
-  //   });
-
-  //   builder.addCase(postBookDetails.fulfilled, (state, action) => {
-  //     state.books = action.payload;
-  //     state.books.push(action.payload);
-  //   });
-
-  //   builder.addCase(postBookDetails.rejected, (state) => {
-  //     state.books = [];
-  //     state.isLoading = false;
-  //   });
-  // },
 });
 
 export const {

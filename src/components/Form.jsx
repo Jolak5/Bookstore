@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import AddBookButton from './AddBookButton';
+import { postBookDetails } from './redux/books/booksSlice';
 
 const INITIAL_FORM_STATE = {
   author: '',
@@ -8,11 +10,12 @@ const INITIAL_FORM_STATE = {
 };
 
 export default function Form() {
+  const dispatch = useDispatch();
   const [formState, setFormState] = useState(INITIAL_FORM_STATE);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    dispatch(postBookDetails(formState));
     setFormState({
       ...formState,
     });
