@@ -2,9 +2,12 @@ import './App.css';
 import {
   createBrowserRouter, Route, createRoutesFromElements, RouterProvider,
 } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import NavBar from './components/navBar';
 import Category from './pages/category';
 import Home from './pages/Home';
+import { getBookDetails } from './components/redux/books/booksSlice';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -16,6 +19,22 @@ const router = createBrowserRouter(
 );
 
 function App() {
+  const dispatch = useDispatch();
+  const { isLoading } = useSelector((state) => state.book);
+  // const { isLoading } = useSelector((state) => state.book);
+  console.log(isLoading);
+  useEffect(() => {
+    dispatch(getBookDetails());
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="loading">
+        <h1>Loading ....</h1>
+      </div>
+    );
+  }
+
   return (
     <RouterProvider router={router} />
   );

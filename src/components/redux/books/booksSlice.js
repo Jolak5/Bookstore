@@ -20,7 +20,7 @@ export const getBookDetails = createAsyncThunk('book/getBookDetails', async () =
 export const postBookDetails = createAsyncThunk('book/getBookDetails', async (books) => {
   try {
     const resp = await axios.post(url, books);
-    return resp.data;
+    return resp;
   } catch (error) {
     return error;
   }
@@ -30,7 +30,7 @@ export const bookSlice = createSlice({
   name: 'addbook',
   initialState: {
     books: [],
-    isLoading: false,
+    isLoading: true,
   },
   reducers: {
     addBooks: (state, action) => ({
