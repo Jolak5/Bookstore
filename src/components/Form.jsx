@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { v4 as uuid } from 'uuid';
 import AddBookButton from './AddBookButton';
 
 const INITIAL_FORM_STATE = {
@@ -9,14 +8,13 @@ const INITIAL_FORM_STATE = {
 };
 
 export default function Form() {
-  const [formState, setFormState] = useState({ ...INITIAL_FORM_STATE, id: 2 });
+  const [formState, setFormState] = useState(INITIAL_FORM_STATE);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     setFormState({
       ...formState,
-      id: uuid(),
     });
   };
 
