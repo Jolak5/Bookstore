@@ -10,13 +10,13 @@ export default function Home() {
 
   return (
     <div className="bookList">
-      { (books ?? []).filter((b) => b.id).map((book) => (
-        <li key={book.id} id={book.id}>
+      { (books ?? []).filter((b) => b.item_Id).map((book) => (
+        <li key={book.item_Id} id={book.item_Id}>
           {book.author}
           {' '}
           {book.title}
           {' '}
-          <button type="button" onClick={() => dispatch(deleteBook(book.id))}>REMOVE</button>
+          <button type="button" onClick={() => dispatch(deleteBook(book.item_Id))}>REMOVE</button>
         </li>
 
       ))}

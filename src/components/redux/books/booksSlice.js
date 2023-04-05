@@ -32,12 +32,12 @@ export const bookSlice = createSlice({
   reducers: {
     addBooks: (state, action) => ({
       ...state,
-      books: [...state.books, { ...action.payload, id: uuid() }],
+      books: [...state.books, { ...action.payload, item_Id: uuid() }],
     }),
 
     deleteBook: (state, action) => {
       const bookId = action.payload;
-      state.books = state.books.filter((book) => book.id !== bookId);
+      state.books = state.books.filter((book) => book.item_Id !== bookId);
     },
 
   },
