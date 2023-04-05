@@ -16,7 +16,7 @@ export default function Home() {
           {' '}
           {book.title}
           {' '}
-          <button type="button" onClick={() => dispatch(deleteBook(book.id))}>Deletes</button>
+          <button type="button" onClick={() => dispatch(deleteBook(book.id))}>REMOVE</button>
         </li>
 
       ))}

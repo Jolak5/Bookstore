@@ -8,7 +8,7 @@ export default function AddBookButton({ book }) {
 
   return (
     <div>
-      <button type="button" onClick={() => dispatch(addBooks(book))}>ADD A BOOK!!!</button>
+      <button type="button" onClick={() => dispatch(addBooks(book))}>ADD A BOOK!!</button>
     </div>
   );
 }
