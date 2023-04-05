@@ -15,6 +15,8 @@ export const getBookDetails = createAsyncThunk('book/getBookDetails', async () =
   }
 });
 
+// post data to api
+
 export const postBookDetails = createAsyncThunk('book/getBookDetails', async (books) => {
   try {
     const resp = await axios.post(url, books);
@@ -28,6 +30,7 @@ export const bookSlice = createSlice({
   name: 'addbook',
   initialState: {
     books: [],
+    isLoading: false,
   },
   reducers: {
     addBooks: (state, action) => ({
@@ -39,8 +42,8 @@ export const bookSlice = createSlice({
       const bookId = action.payload;
       state.books = state.books.filter((book) => book.item_Id !== bookId);
     },
-
   },
+
   extraReducers: {
     [getBookDetails.pending]: (state) => ({
       ...state,
@@ -48,11 +51,13 @@ export const bookSlice = createSlice({
     }),
     [getBookDetails.fulfilled]: (state, action) => ({
       ...state,
+      isLoading: false,
       books: action.payload,
     }),
     [getBookDetails.rejected]: (state) => ({
       ...state,
       isLoading: false,
+      books: [],
     }),
     [postBookDetails.pending]: (state) => ({
       ...state,
@@ -64,8 +69,38 @@ export const bookSlice = createSlice({
     },
     [postBookDetails.rejected]: (state) => {
       state.isLoading = false;
+      state.books = [];
     },
   },
+  // extraReducers: (builder) => {
+  //   builder.addCase(getBookDetails.pending, (state) => {
+  //     state.isLoading = true;
+  //   });
+
+  //   builder.addCase(getBookDetails.fulfilled, (state, action) => {
+  //     state.books = action.payload;
+  //     state.isLoading = true;
+  //   });
+
+  //   builder.addCase(getBookDetails.rejected, (state) => {
+  //     state.books = [];
+  //     state.isLoading = false;
+  //   });
+  //   // post books details reducers
+  //   builder.addCase(postBookDetails.pending, (state) => {
+  //     state.isLoading = true;
+  //   });
+
+  //   builder.addCase(postBookDetails.fulfilled, (state, action) => {
+  //     state.books = action.payload;
+  //     state.books.push(action.payload);
+  //   });
+
+  //   builder.addCase(postBookDetails.rejected, (state) => {
+  //     state.books = [];
+  //     state.isLoading = false;
+  //   });
+  // },
 });
 
 export const {
