@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { v4 as uuid } from 'uuid';
 import AddBookButton from './AddBookButton';
 import { postBookDetails } from './redux/books/booksSlice';
 import '../styles/form.css';
@@ -17,10 +16,6 @@ export default function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormState({
-      ...formState,
-      item_Id: '22',
-    });
     dispatch(postBookDetails(formState));
   };
 
@@ -32,7 +27,6 @@ export default function Form() {
     setFormState({
       ...formState,
       [e.target.name]: e.target.value,
-      item_Id: uuid(),
     });
   };
 

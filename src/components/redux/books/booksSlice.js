@@ -3,7 +3,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-// import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from 'uuid';
 
 const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/HZntFTFERWdyWphmEi2T/books';
 
@@ -36,7 +36,7 @@ export const bookSlice = createSlice({
   reducers: {
     addBooks: (state, action) => ({
       ...state,
-      books: [...state.books, action.payload],
+      books: [...state.books, { ...action.payload, item_Id: uuid() }],
     }),
 
     deleteBook: (state, action) => {
