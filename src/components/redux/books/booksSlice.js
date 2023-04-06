@@ -29,6 +29,21 @@ export const postBookDetails = createAsyncThunk('book/postBookDetails', async (b
   }
 });
 
+// delete api
+export const deleteAPIBook = createAsyncThunk(
+  'books/deleteAPIBook',
+  async (id, thunkAPI) => {
+    try {
+      const res = await axios.delete(`${url}/${id}`);
+      return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(
+        error?.data?.message || 'Error occured deleting data',
+      );
+    }
+  },
+);
+
 export const bookSlice = createSlice({
   name: 'addbook',
   initialState: {

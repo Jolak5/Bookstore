@@ -11,10 +11,11 @@ header {
   background-color: var(--white-two);
   box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
   margin: 0 0.063rem 0.938rem 0;
-  width: 95%
+  width: 95%;
 }
 
-.left-pan, .right-pan {
+.left-pan,
+.right-pan {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -22,7 +23,6 @@ header {
 
 .left-pan h4 {
   color: #121212;
-  font-family: Montserrat;
   font-size: 0.875rem;
 }
 
@@ -34,14 +34,13 @@ header {
 }
 
 .left-pan p {
-  font-family: RobotoSlab;
   color: #4386bf;
   font-size: 0.875rem;
   font-weight: 300;
 }
 
 .circle {
-   width: 4.25rem;
+  width: 4.25rem;
   height: 4.25rem;
   border-style: solid;
   border-width: 5px;
@@ -52,17 +51,14 @@ header {
 }
 
 .buttonDiv {
-  background-color: none;
   display: flex;
   gap: 10px;
 }
 
 .buttonDiv button {
-  font-family: Roboto;
   color: #4386bf;
   text-decoration: none;
   border: none;
-  background-color: none !important;
 }
 
 .middle-pan {
@@ -73,7 +69,6 @@ header {
 .right-pan p {
   color: #121212;
   opacity: 0.5;
-  font-family: RobotoSlab;
   font-size: 0.813rem;
   font-weight: 300;
 }

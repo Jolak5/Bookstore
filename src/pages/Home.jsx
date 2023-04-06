@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Form from '../components/Form';
 import './home.css';
-import { deleteBook } from '../components/redux/books/booksSlice';
+import { deleteBook, deleteAPIBook } from '../components/redux/books/booksSlice';
 
 // Import the initialState and display
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
             <div className="buttonDiv">
               {' '}
               <button type="button">Comments</button>
-              <button className="remove" type="button" onClick={() => dispatch(deleteBook(book.item_id))}>REMOVE</button>
+              <button className="remove" type="button" onClick={() => { dispatch(deleteBook(book.item_id)); dispatch(deleteAPIBook(book.item_id)); }}>REMOVE</button>
               <button type="button">Edit</button>
             </div>
           </div>
