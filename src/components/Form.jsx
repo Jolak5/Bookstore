@@ -32,6 +32,10 @@ export default function Form() {
     };
     dispatch(postBookDetails(bookData));
     dispatch(addBooks(bookData));
+
+    setAuthor('');
+    setTitle('');
+    setCategory('');
   };
 
   return (
