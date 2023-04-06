@@ -47,6 +47,8 @@ header {
   border-width: 5px;
   border-image-source: linear-gradient(to bottom, var(--medium-blue), #379cf6);
   border-image-slice: 1;
+  border-radius: 100px;
+  color: #379cf6;
 }
 
 .buttonDiv {
@@ -89,4 +91,5 @@ header {
   border-radius: 3px;
   background-color: #0290ff;
   border: none;
+  color: white;
 }

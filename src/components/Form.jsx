@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
 import AddBookButton from './AddBookButton';
 import { postBookDetails } from './redux/books/booksSlice';
+import '../styles/form.css';
 
 const INITIAL_FORM_STATE = {
   author: '',
@@ -37,7 +38,7 @@ export default function Form() {
 
   return (
     <div>
-
+      <h1>ADD NEW BOOK</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

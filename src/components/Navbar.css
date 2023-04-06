@@ -1,6 +1,7 @@
 nav {
-  display: flex;
-  color: red;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  color: #0290ff;
   align-items: center;
   padding: 0 10%;
   width: 100%;
@@ -14,11 +15,25 @@ nav h1 {
 nav a {
   text-decoration: none;
   padding-left: 10%;
-  font-size: 24px;
+  font-size: 16px;
   color: #000;
 }
 
 nav a:hover {
   text-decoration: underline;
   color: aqua;
+}
+
+.left-nav {
+  display: flex;
+  align-items: center;
+}
+
+.user {
+  text-align: right;
+}
+
+svg {
+  width: 25px;
+  color: blue;
 }
