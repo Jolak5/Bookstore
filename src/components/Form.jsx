@@ -5,25 +5,15 @@ import { postBookDetails, addBooks } from './redux/books/booksSlice';
 
 import '../styles/form.css';
 
-// const INITIAL_FORM_STATE = {
-//   item_Id: '',
-//   author: '',
-//   title: '',
-//   category: '',
-// };
-
 export default function Form() {
-  // const books = useSelector((state) => state.book.books);
-
   const [author, setAuthor] = useState('');
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const dispatch = useDispatch();
-  // const [formState, setFormState] = useState(INITIAL_FORM_STATE);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log('I have submited');
+
     const bookData = {
       item_id: uuid(),
       title,
