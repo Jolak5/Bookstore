@@ -1,57 +1,71 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
-import AddBookButton from './AddBookButton';
+import { postBookDetails, addBooks } from './redux/books/booksSlice';
 
-const INITIAL_FORM_STATE = {
-  author: '',
-  title: '',
-  id: '',
-};
+import '../styles/form.css';
 
 export default function Form() {
-  const [formState, setFormState] = useState({ ...INITIAL_FORM_STATE, id: 2 });
+  const [author, setAuthor] = useState('');
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setFormState({
-      ...formState,
-      id: uuid(),
-    });
-  };
+    const bookData = {
+      item_id: uuid(),
+      title,
+      author,
+      category,
+    };
+    dispatch(postBookDetails(bookData));
+    dispatch(addBooks(bookData));
 
-  const handleChange = (e) => {
-    setFormState({
-      ...formState,
-      [e.target.name]: e.target.value,
-    });
+    setAuthor('');
+    setTitle('');
+    setCategory('');
   };
 
   return (
     <div>
-
+      <h1>ADD NEW BOOK</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="author"
           placeholder="Author..."
-          value={formState.author}
-          onChange={handleChange}
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
           required
         />
         <input
           type="text"
           name="title"
           placeholder="Book title..."
-          value={formState.title}
-          onChange={handleChange}
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
           required
         />
+        <select
+          className="category"
+          name="category"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          required
+        >
+          <option>Category</option>
+          <option>Fiction</option>
+          <option>Science Fiction</option>
+          <option>Fantasy</option>
+          <option>Mystery</option>
+          <option>Fan Fiction</option>
+        </select>
 
         {/* TODO fix hack */}
 
-        <AddBookButton book={formState} />
-
+        <button type="submit">ADD A BOOK!!</button>
       </form>
     </div>
 
