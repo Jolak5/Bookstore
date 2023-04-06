@@ -10,7 +10,7 @@ const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstor
 export const getBookDetails = createAsyncThunk('book/getBookDetails', async () => {
   try {
     const resp = await axios.get(url);
-    return [resp.data];
+    return resp.data;
   } catch (error) {
     return (error.message);
   }
@@ -38,12 +38,12 @@ export const bookSlice = createSlice({
   reducers: {
     addBooks: (state, action) => ({
       ...state,
-      books: [...state.books, { ...action.payload, item_Id: uuid() }],
+      books: [...state.books, { ...action.payload, item_id: uuid() }],
     }),
 
     deleteBook: (state, action) => {
       const bookId = action.payload;
-      state.books = state.books.filter((book) => book.item_Id !== bookId);
+      state.books = state.books.filter((book) => book.item_id !== bookId);
     },
   },
 
@@ -54,9 +54,18 @@ export const bookSlice = createSlice({
       isLoading: true,
     }),
     [getBookDetails.fulfilled]: (state, action) => {
-      console.log(action);
       state.isLoading = false;
-      state.books = action.payload;
+      // eslint-disable-next-line prefer-destructuring
+      const gottenBooks = action.payload;
+      const newBooksArr = [];
+      // const { 00f417b6-4bdb-4f08-83e9-5841e5076405 } = gottenBooks;
+      // eslint-disable-next-line no-restricted-syntax, guard-for-in
+      for (const id in gottenBooks) {
+        const bookObj = gottenBooks[id][0];
+        bookObj.item_id = id;
+        newBooksArr.push(bookObj);
+      }
+      state.books = newBooksArr;
     },
     [getBookDetails.rejected]: (state) => ({
       ...state,
@@ -66,9 +75,9 @@ export const bookSlice = createSlice({
     // post a book
     // [postBookDetails.pending]: (action) => {
     // },
-    [postBookDetails.pending]: (state, action) => {
-      console.log(action.payload);
-    },
+    // [postBookDetails.fulfilled]: (state, action) => {
+    //   console.log(action.payload);
+    // },
   },
 });
 

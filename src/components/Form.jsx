@@ -13,6 +13,8 @@ import '../styles/form.css';
 // };
 
 export default function Form() {
+  // const books = useSelector((state) => state.book.books);
+
   const [author, setAuthor] = useState('');
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
@@ -28,15 +30,8 @@ export default function Form() {
       author,
       category,
     };
-
     dispatch(postBookDetails(bookData));
     dispatch(addBooks(bookData));
-  };
-
-  const handleChange = (e) => {
-    setAuthor(e.target.value);
-    setTitle(e.target.value);
-    setCategory(e.target.value);
   };
 
   return (
@@ -59,7 +54,13 @@ export default function Form() {
           onChange={(e) => setTitle(e.target.value)}
           required
         />
-        <select className="category" name="category" value={category} onChange={handleChange} required>
+        <select
+          className="category"
+          name="category"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          required
+        >
           <option>Category</option>
           <option>Fiction</option>
           <option>Science Fiction</option>

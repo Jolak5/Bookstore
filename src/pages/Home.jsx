@@ -10,8 +10,8 @@ export default function Home() {
 
   return (
     <div className="bookList">
-      { (books ?? []).filter((b) => b.item_Id).map((book) => (
-        <div className="eachBook" key={book.item_Id} id={book.item_Id}>
+      { (books ?? []).filter((b) => b.item_id).map((book) => (
+        <div className="eachBook" key={book.item_id} id={book.item_id}>
           <div className="left-pan">
             <h4>{book.category}</h4>
             {' '}
@@ -22,7 +22,7 @@ export default function Home() {
             <div className="buttonDiv">
               {' '}
               <button type="button">Comments</button>
-              <button className="remove" type="button" onClick={() => dispatch(deleteBook(book.item_Id))}>REMOVE</button>
+              <button className="remove" type="button" onClick={() => dispatch(deleteBook(book.item_id))}>REMOVE</button>
               <button type="button">Edit</button>
             </div>
           </div>
