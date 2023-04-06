@@ -10,7 +10,7 @@ const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstor
 export const getBookDetails = createAsyncThunk('book/getBookDetails', async () => {
   try {
     const resp = await axios.get(url);
-    return [...resp.data];
+    return [resp.data];
   } catch (error) {
     return (error.message);
   }
@@ -18,12 +18,14 @@ export const getBookDetails = createAsyncThunk('book/getBookDetails', async () =
 
 // post data to api
 
-export const postBookDetails = createAsyncThunk('book/postBookDetails', async (books) => {
+export const postBookDetails = createAsyncThunk('book/postBookDetails', async (books, thunkAPI) => {
   try {
     const resp = await axios.post(url, books);
     return resp.data;
   } catch (error) {
-    return error.message;
+    return thunkAPI.rejectWithValue(
+      error?.data?.message || 'An error occured while posting data',
+    );
   }
 });
 
@@ -46,25 +48,26 @@ export const bookSlice = createSlice({
   },
 
   extraReducers: {
+    // get a book
     [getBookDetails.pending]: (state) => ({
       ...state,
       isLoading: true,
     }),
-    [getBookDetails.fulfilled]: (state, action) => ({
-      ...state,
-      isLoading: false,
-      books: action.payload,
-    }),
+    [getBookDetails.fulfilled]: (state, action) => {
+      console.log(action);
+      state.isLoading = false;
+      state.books = action.payload;
+    },
     [getBookDetails.rejected]: (state) => ({
       ...state,
       isLoading: false,
       books: [],
     }),
-    // postBookDetails extra reduce
-    [postBookDetails.fulfilled]: (state, action) => {
-      state.isLoading = false;
-      state.books.push(action.payload);
-      // books: [...state.books, { ...action.payload, item_Id: uuid() }],
+    // post a book
+    // [postBookDetails.pending]: (action) => {
+    // },
+    [postBookDetails.pending]: (state, action) => {
+      console.log(action.payload);
     },
   },
 });

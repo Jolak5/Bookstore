@@ -9,4 +9,9 @@ h1, p, h4, h5, h6 {
 
 button {
   background-color: none;
+
+}
+
+.remove {
+  cursor: pointer;
 }

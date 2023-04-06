@@ -13,7 +13,7 @@ export default function Home() {
       { (books ?? []).filter((b) => b.item_Id).map((book) => (
         <div className="eachBook" key={book.item_Id} id={book.item_Id}>
           <div className="left-pan">
-            <h4>category</h4>
+            <h4>{book.category}</h4>
             {' '}
             <h1>{book.author}</h1>
             {' '}
@@ -22,7 +22,7 @@ export default function Home() {
             <div className="buttonDiv">
               {' '}
               <button type="button">Comments</button>
-              <button type="button" onClick={() => dispatch(deleteBook(book.item_Id))}>REMOVE</button>
+              <button className="remove" type="button" onClick={() => dispatch(deleteBook(book.item_Id))}>REMOVE</button>
               <button type="button">Edit</button>
             </div>
           </div>
