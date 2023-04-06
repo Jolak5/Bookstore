@@ -21,11 +21,9 @@ const router = createBrowserRouter(
 function App() {
   const dispatch = useDispatch();
   const { isLoading } = useSelector((state) => state.book);
-  // const { isLoading } = useSelector((state) => state.book);
-  console.log(isLoading);
   useEffect(() => {
     dispatch(getBookDetails());
-  }, []);
+  }, [dispatch]);
 
   if (isLoading) {
     return (

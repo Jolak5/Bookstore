@@ -11,13 +11,34 @@ export default function Home() {
   return (
     <div className="bookList">
       { (books ?? []).filter((b) => b.item_Id).map((book) => (
-        <li key={book.item_Id} id={book.item_Id}>
-          {book.author}
-          {' '}
-          {book.title}
-          {' '}
-          <button type="button" onClick={() => dispatch(deleteBook(book.item_Id))}>REMOVE</button>
-        </li>
+        <div className="eachBook" key={book.item_Id} id={book.item_Id}>
+          <div className="left-pan">
+            <h4>category</h4>
+            {' '}
+            <h1>{book.author}</h1>
+            {' '}
+            <p className="booktitle">{book.title}</p>
+            {' '}
+            <div className="buttonDiv">
+              {' '}
+              <button type="button">Comments</button>
+              <button type="button" onClick={() => dispatch(deleteBook(book.item_Id))}>REMOVE</button>
+              <button type="button">Edit</button>
+            </div>
+          </div>
+          <div className="middle-pan">
+            <div className="circle" />
+            <div>
+              <h1 className="percentage">64%</h1>
+              <p>Completed</p>
+            </div>
+          </div>
+          <div className="right-pan">
+            <p>CURRENT CHAPTER</p>
+            <h5>Chapter 17</h5>
+            <button type="button" className="updateProgress">UPDATE PROGRESS</button>
+          </div>
+        </div>
 
       ))}
       <Form />

@@ -1,3 +1,92 @@
 header {
   display: flex;
 }
+
+.eachBook {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  padding: 2rem 7.438rem 1.625rem 1.688rem;
+  background-color: var(--white-two);
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  margin: 0 0.063rem 0.938rem 0;
+  width: 95%
+}
+
+.left-pan, .right-pan {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.left-pan h4 {
+  color: #121212;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+}
+
+.left-pan h1 {
+  font-size: 1.375rem;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.left-pan p {
+  font-family: RobotoSlab;
+  color: #4386bf;
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+
+.circle {
+   width: 4.25rem;
+  height: 4.25rem;
+  border-style: solid;
+  border-width: 5px;
+  border-image-source: linear-gradient(to bottom, var(--medium-blue), #379cf6);
+  border-image-slice: 1;
+}
+
+.buttonDiv {
+  background-color: none;
+  display: flex;
+  gap: 10px;
+}
+
+.buttonDiv button {
+  font-family: Roboto;
+  color: #4386bf;
+  text-decoration: none;
+  border: none;
+  background-color: none !important;
+}
+
+.middle-pan {
+  display: flex;
+  gap: 10px;
+}
+
+.right-pan p {
+  color: #121212;
+  opacity: 0.5;
+  font-family: RobotoSlab;
+  font-size: 0.813rem;
+  font-weight: 300;
+}
+
+.right-pan h5 {
+  letter-spacing: -0.4px;
+  color: #121212;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.right-pan button {
+  width: 11.5rem;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  border: none;
+}
