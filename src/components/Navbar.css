@@ -37,9 +37,12 @@ nav a:hover {
 svg {
   width: 25px;
   color: #0290ff;
+  padding: 5px;
+}
+
+.user svg {
   border: solid 1px #e8e8e8;
   border-radius: 100%;
-  padding: 5px;
 }
 
 @media screen and (max-width: 560px) {
