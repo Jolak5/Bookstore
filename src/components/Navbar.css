@@ -37,3 +37,13 @@ svg {
   width: 25px;
   color: blue;
 }
+
+@media screen and (max-width: 560px) {
+  nav {
+    grid-template-columns: 50% 40%;
+  }
+
+  nav h1 {
+    font-size: 1rem;
+  }
+}
