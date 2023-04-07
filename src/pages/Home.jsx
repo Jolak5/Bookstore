@@ -15,9 +15,9 @@ export default function Home() {
           <div className="left-pan">
             <h4>{book.category}</h4>
             {' '}
-            <h1>{book.author}</h1>
+            <h1>{book.title}</h1>
             {' '}
-            <p className="booktitle">{book.title}</p>
+            <p className="booktitle">{book.author}</p>
             {' '}
             <div className="buttonDiv">
               {' '}

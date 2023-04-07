@@ -1,3 +1,7 @@
+button {
+  background-color:white;
+}
+
 body {
   background-color: var(--pale-grey);
   font-size: 16px;

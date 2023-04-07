@@ -3,7 +3,7 @@ nav {
   grid-template-columns: 60% 40%;
   color: #0290ff;
   align-items: center;
-  padding: 0 10%;
+  padding: 1% 10% 0;
   width: 100%;
   justify-content: space-between;
 }

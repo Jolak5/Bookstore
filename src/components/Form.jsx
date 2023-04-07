@@ -30,22 +30,22 @@ export default function Form() {
 
   return (
     <div>
-      <h1>ADD NEW BOOK</h1>
+      <h1 className="addNewBook">ADD NEW BOOK</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="author"
-          placeholder="Author..."
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-          required
-        />
         <input
           type="text"
           name="title"
           placeholder="Book title..."
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          required
+        />
+        <input
+          type="text"
+          name="author"
+          placeholder="Author..."
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
           required
         />
         <select
@@ -65,7 +65,7 @@ export default function Form() {
 
         {/* TODO fix hack */}
 
-        <button type="submit">ADD A BOOK!!</button>
+        <button className="submit" type="submit">ADD A BOOK!!</button>
       </form>
     </div>
 
