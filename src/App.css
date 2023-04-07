@@ -57,6 +57,10 @@ header {
   text-decoration: none;
   border: none;
   padding: 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
 }
 
 .middle-pan {
@@ -80,6 +84,7 @@ header {
   color: #121212;
   opacity: 0.5;
   font-size: 0.875rem;
+  font-weight: 300;
 }
 
 .right-pan h5 {
@@ -87,6 +92,7 @@ header {
   color: #121212;
   font-size: 1rem;
   font-weight: 300;
+  letter-spacing: -0.4px;
 }
 
 .right-pan button {
@@ -97,6 +103,8 @@ header {
   background-color: #0290ff;
   border: none;
   color: white;
+  font-size: 0.813rem;
+  letter-spacing: 0.5px;
 }
 
 svg {

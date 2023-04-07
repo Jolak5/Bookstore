@@ -9,7 +9,8 @@ nav {
 }
 
 nav h1 {
-  font-size: 2rem;
+  font-size: 1.875rem;
+  font-weight: bold;
 }
 
 nav a {
@@ -35,7 +36,10 @@ nav a:hover {
 
 svg {
   width: 25px;
-  color: blue;
+  color: #0290ff;
+  border: solid 1px #e8e8e8;
+  border-radius: 100%;
+  padding: 5px;
 }
 
 @media screen and (max-width: 560px) {

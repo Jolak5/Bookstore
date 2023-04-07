@@ -41,12 +41,12 @@ export default function Home() {
                 strokeWidth={8}
                 styles={{
                   path: {
-                    stroke: '#3f51b5',
+                    stroke: '#307bbe',
                     strokeLinecap: 'butt',
                     transition: 'stroke-dashoffset 0.5s ease 0s',
                   },
                   trail: {
-                    stroke: '#d6d6d6',
+                    stroke: '#e8e8e8',
                     strokeLinecap: 'butt',
                   },
                 }}
