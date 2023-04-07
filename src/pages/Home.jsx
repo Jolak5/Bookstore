@@ -30,7 +30,9 @@ export default function Home() {
             <div className="buttonDiv">
               {' '}
               <button type="button">Comments</button>
+              <span className="Line-2" />
               <button className="remove" type="button" onClick={() => { dispatch(deleteBook(book.item_id)); dispatch(deleteAPIBook(book.item_id)); }}>Remove</button>
+              <span className="Line-2" />
               <button type="button">Edit</button>
             </div>
           </div>
