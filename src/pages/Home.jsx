@@ -30,12 +30,12 @@ export default function Home() {
             <div className="buttonDiv">
               {' '}
               <button type="button">Comments</button>
-              <button className="remove" type="button" onClick={() => { dispatch(deleteBook(book.item_id)); dispatch(deleteAPIBook(book.item_id)); }}>REMOVE</button>
+              <button className="remove" type="button" onClick={() => { dispatch(deleteBook(book.item_id)); dispatch(deleteAPIBook(book.item_id)); }}>Remove</button>
               <button type="button">Edit</button>
             </div>
           </div>
           <div className="middle-pan">
-            <div style={{ width: '100px', height: '100px' }}>
+            <div className="circle">
               <CircularProgressbar
                 value={percentage}
                 strokeWidth={8}

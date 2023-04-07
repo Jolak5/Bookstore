@@ -4,7 +4,7 @@ header {
 
 .eachBook {
   display: grid;
-  grid-template-columns: 30% 20% 20%;
+  grid-template-columns: 30% 30% 20%;
   justify-content: space-between;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
@@ -13,6 +13,7 @@ header {
   box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
   margin: 0 0.063rem 0.938rem 0;
   width: 95%;
+  gap: 1%;
 }
 
 .left-pan,
@@ -25,6 +26,7 @@ header {
 .left-pan h4 {
   color: #121212;
   font-size: 0.875rem;
+  opacity: 0.5;
 }
 
 .left-pan h1 {
@@ -42,14 +44,7 @@ header {
 }
 
 .circle {
-  width: 4.25rem;
-  height: 4.25rem;
-  border-style: solid;
-  border-width: 5px;
-  border-image-source: linear-gradient(to bottom, var(--medium-blue), #379cf6);
-  border-image-slice: 1;
-  border-radius: 100px;
-  color: #379cf6;
+  width: 30%;
 }
 
 .buttonDiv {
@@ -75,6 +70,10 @@ header {
   opacity: 0.5;
   font-size: 0.813rem;
   font-weight: 300;
+}
+
+.middle-pan div h1 {
+  font-weight: 400;
 }
 
 .middle-pan div p {
@@ -106,9 +105,43 @@ svg {
 
 @media screen and (max-width: 756px) {
   .eachBook {
-    grid-template-columns: auto auto;
+    grid-template-columns: 50% 50%;
     grid-template-rows: auto auto;
     align-items: center;
     justify-content: center;
+    gap: 20px;
+    align-content: center;
+  }
+
+  .middle-pan {
+    justify-content: center;
+  }
+
+  .circle {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .bookList {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+  }
+
+  .middle-pan {
+    justify-content: left;
+  }
+
+  .eachBook {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .circle {
+    width: 20%;
   }
 }
