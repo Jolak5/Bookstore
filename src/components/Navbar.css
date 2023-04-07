@@ -16,13 +16,21 @@ nav h1 {
 nav a {
   text-decoration: none;
   padding-left: 10%;
-  font-size: 16px;
+  font-size: 0.813rem;
   color: #000;
+  opacity: 0.5;
+  letter-spacing: 1.9px;
 }
 
 nav a:hover {
   text-decoration: underline;
-  color: aqua;
+  color: #4386bf;
+}
+
+nav a:active {
+  opacity: 1;
+  text-decoration: underline;
+  color: #121212;
 }
 
 .left-nav {
