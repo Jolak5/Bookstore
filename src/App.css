@@ -4,7 +4,7 @@ header {
 
 .eachBook {
   display: grid;
-  grid-template-columns: 45% 30% 25%;
+  grid-template-columns: 30% 20% 20%;
   justify-content: space-between;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
@@ -70,17 +70,17 @@ header {
   align-items: center;
 }
 
-.middle-pan div p {
-  color: #121212;
-  opacity: 0.5;
-  font-size: 0.875rem;
-}
-
 .right-pan p {
   color: #121212;
   opacity: 0.5;
   font-size: 0.813rem;
   font-weight: 300;
+}
+
+.middle-pan div p {
+  color: #121212;
+  opacity: 0.5;
+  font-size: 0.875rem;
 }
 
 .right-pan h5 {
