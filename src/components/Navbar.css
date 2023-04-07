@@ -3,25 +3,34 @@ nav {
   grid-template-columns: 60% 40%;
   color: #0290ff;
   align-items: center;
-  padding: 0 10%;
+  padding: 1% 10% 0;
   width: 100%;
   justify-content: space-between;
 }
 
 nav h1 {
-  font-size: 2rem;
+  font-size: 1.875rem;
+  font-weight: bold;
 }
 
 nav a {
   text-decoration: none;
   padding-left: 10%;
-  font-size: 16px;
+  font-size: 0.813rem;
   color: #000;
+  opacity: 0.5;
+  letter-spacing: 1.9px;
 }
 
 nav a:hover {
   text-decoration: underline;
-  color: aqua;
+  color: #4386bf;
+}
+
+nav a:active {
+  opacity: 1;
+  text-decoration: underline;
+  color: #121212;
 }
 
 .left-nav {
@@ -35,5 +44,21 @@ nav a:hover {
 
 svg {
   width: 25px;
-  color: blue;
+  color: #0290ff;
+  padding: 5px;
+}
+
+.user svg {
+  border: solid 1px #e8e8e8;
+  border-radius: 100%;
+}
+
+@media screen and (max-width: 560px) {
+  nav {
+    grid-template-columns: 50% 40%;
+  }
+
+  nav h1 {
+    font-size: 1rem;
+  }
 }

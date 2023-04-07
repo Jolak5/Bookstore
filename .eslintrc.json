@@ -25,7 +25,8 @@
     "no-shadow": "off",
     "guard-for-in": "off",
     "no-restricted-syntax": "off",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "import/no-extraneous-dependencies": "off"
   },
   "ignorePatterns": ["dist/", "build/"]
 }

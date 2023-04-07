@@ -1,0 +1,22 @@
+.StatusConstruction {
+  font-size: 5rem;
+  position: absolute;
+  top: 30%;
+  left: 22%;
+  text-align: center;
+}
+
+.checkStatus {
+  color: white;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  background-color: #0290ff;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  margin-top: 20px;
+  position: absolute;
+  top: 100%;
+  left: 45%;
+}

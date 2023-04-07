@@ -1,14 +1,26 @@
 form {
   display: grid;
-  grid-template-columns: 60% 20% 20%;
+  grid-template-columns: 40% 20% 20% 20%;
   gap: 20px;
   margin-top: 20px;
+}
+
+.addNewBook {
+  color: #888;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-top: 40px;
+  letter-spacing: -0.18px;
 }
 
 input {
   padding: 10px;
 }
 
-button {
+.submit {
+  background-color: #0290ff;
+  border: none;
+  color: white;
+  font-family: 'Roboto Slab', serif;
   padding: 15px;
 }
