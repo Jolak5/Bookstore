@@ -33,7 +33,7 @@
 
 # 📖 [Bookstore-react] <a name="about-project"></a>
 
-**[Bookstore-react]**  is a  React App that has calculation functionality
+**[Bookstore-react]**  is a  React App where users can track their reading progress, add books they are currently reading and remove books that they are no longer reading. 
 
 ## 🛠 Built With <a name="built-with"></a>
 
